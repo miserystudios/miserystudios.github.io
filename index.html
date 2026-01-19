@@ -8,7 +8,7 @@
     <title>THE MISERY</title>
 
     <meta property="og:title" content="THE MISERY">
-    <meta property="og:description" content="Official Terminal Entry // G4 District">
+    <meta property="og:description" content="Five years after the G4 Incident, the truth awaits.">
     <meta property="og:image" content="https://miserystudios.github.io/public/background.png?v=9999">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -60,14 +60,14 @@
         .story-content { max-width: 800px; margin: 0 auto; background: rgba(10,10,10,0.8); border-left: 5px solid #836fff; padding: 40px; }
         .story-content p { font-size: 18px; line-height: 1.8; color: #ccc; margin-bottom: 20px; }
 
-        /* FEATURES - GERİ GETİRDİM */
+        /* FEATURES */
         .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .feat-card { background: #080808; border: 1px solid #151515; padding: 40px; transition: 0.3s; }
         .feat-card:hover { border-color: #836fff; background: #0c0c0c; transform: translateY(-5px); }
         .feat-card h3 { color: #836fff; font-weight: 900; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
         .feat-card p { color: #888; font-weight: 700; line-height: 1.5; }
 
-        /* GALLERY (ARCHIVES) - TÜM RESİMLERİ GERİ GETİRDİM */
+        /* GALLERY (ARCHIVES) - QQQ VE PNG OLARAK DÜZELTİLDİ */
         .map-slider { position: relative; width: 100%; max-width: 850px; margin: 0 auto; border: 1px solid #222; overflow: hidden; background: #000; }
         .slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1); }
         .slide { min-width: 100%; position: relative; aspect-ratio: 16/9; overflow: hidden; cursor: zoom-in; }
@@ -78,7 +78,7 @@
         .arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); border: 1px solid #836fff; color: #fff; width: 45px; height: 80px; cursor: pointer; z-index: 20; display: flex; align-items: center; justify-content: center; }
         .next { right: 0; } .prev { left: 0; }
 
-        /* LATEST BRIEFINGS - TAM HALİ */
+        /* LATEST BRIEFINGS - RESİMLER QQQ VE PNG YAPILDI */
         .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .news-box { position: relative; height: 250px; border: 1px solid #222; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
         .news-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: brightness(0.25); z-index: 1; transition: 0.5s; }
@@ -139,13 +139,18 @@
             <div class="map-slider">
                 <div class="arrow prev" onclick="moveSlide(-1)">&#10094;</div>
                 <div class="slider-track" id="track">
-                    <div class="slide"><img src="public/sss1.png"><div class="map-tag">Sector 01 // Entry</div></div>
-                    <div class="slide"><img src="public/sss4.png"><div class="map-tag">Sector 04 // Void</div></div>
-                    <div class="slide"><img src="public/sss5.png"><div class="map-tag">Sector 05 // Labs</div></div>
-                    <div class="slide"><img src="public/sss6.png"><div class="map-tag">Sector 06 // Hallway</div></div>
-                    <div class="slide"><img src="public/sss8.png"><div class="map-tag">Sector 08 // Core</div></div>
-                    <div class="slide"><img src="public/sss10.png"><div class="map-tag">Sector 10 // Deck</div></div>
-                    <div class="slide"><img src="public/sss11.png"><div class="map-tag">Sector 11 // Processing</div></div>
+                    <div class="slide"><img src="public/qqq1.png"><div class="map-tag">Sector 01 // Entry</div></div>
+                    <div class="slide"><img src="public/qqq2.png"><div class="map-tag">Sector 02</div></div>
+                    <div class="slide"><img src="public/qqq3.png"><div class="map-tag">Sector 03</div></div>
+                    <div class="slide"><img src="public/qqq4.png"><div class="map-tag">Sector 04 // Void</div></div>
+                    <div class="slide"><img src="public/qqq5.png"><div class="map-tag">Sector 05 // Labs</div></div>
+                    <div class="slide"><img src="public/qqq6.png"><div class="map-tag">Sector 06 // Hallway</div></div>
+                    <div class="slide"><img src="public/qqq7.png"><div class="map-tag">Sector 07</div></div>
+                    <div class="slide"><img src="public/qqq8.png"><div class="map-tag">Sector 08 // Core</div></div>
+                    <div class="slide"><img src="public/qqq9.png"><div class="map-tag">Sector 09</div></div>
+                    <div class="slide"><img src="public/qqq10.png"><div class="map-tag">Sector 10 // Deck</div></div>
+                    <div class="slide"><img src="public/qqq11.png"><div class="map-tag">Sector 11 // Processing</div></div>
+                    <div class="slide"><img src="public/qqq12.png"><div class="map-tag">Sector 12</div></div>
                 </div>
                 <div class="arrow next" onclick="moveSlide(1)">&#10095;</div>
             </div>
@@ -155,7 +160,7 @@
             <div class="label">Latest Briefings</div>
             <div class="news-grid">
                 <div class="news-box">
-                    <div class="news-bg" style="background-image: url('public/sss13.png');"></div>
+                    <div class="news-bg" style="background-image: url('public/qqq13.png');"></div>
                     <div class="news-content">
                         <div style="color:#836fff; font-weight:900; font-size:12px; margin-bottom:10px;">JANUARY 2026</div>
                         <h3>SYSTEM STABILIZATION</h3>
@@ -163,7 +168,7 @@
                     </div>
                 </div>
                 <div class="news-box">
-                    <div class="news-bg" style="background-image: url('public/sss15.png');"></div>
+                    <div class="news-bg" style="background-image: url('public/qqq14.png');"></div>
                     <div class="news-content">
                         <div style="color:#836fff; font-weight:900; font-size:12px; margin-bottom:10px;">FEBRUARY 2026</div>
                         <h3>ATMOSPHERIC RENDERING</h3>
@@ -193,7 +198,6 @@
 
         const vidBox = document.getElementById('vidBox');
         const gameVid = document.getElementById('gameVid');
-
         if(vidBox && gameVid) {
             gameVid.currentTime = 8;
             vidBox.addEventListener('mouseenter', () => { gameVid.play(); });
