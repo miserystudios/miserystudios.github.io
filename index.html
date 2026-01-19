@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="icon" type="image/png" href="public/qqq1.png">
     <title>THE MISERY</title>
 
     <meta property="og:title" content="THE MISERY">
     <meta property="og:description" content="Official Terminal Entry // G4 District">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://miserystudios.github.io/public/background.png">
+    <meta property="og:image" content="https://miserystudios.github.io/public/background.png?v=777">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://miserystudios.github.io/public/background.png?v=777">
     <meta name="theme-color" content="#836fff">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
         html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-user-select: none; user-select: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
         
-        body { background-color: #000; color: #fff; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+        body { background: transparent; color: #fff; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+
+        img { pointer-events: none; -webkit-user-drag: none; }
 
         .bg-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            /* ÇİFT KATMANLI KONTROL: Eğer yereldeki 'embed.png' hata verirse GitHub'daki 'background.png' devreye girer */
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
-                        url('public/embed.png'), 
-                        url('https://miserystudios.github.io/public/background.png');
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            /* ARKA PLAN YOLU DÜZELTİLDİ */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('public/embed.png');
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;
@@ -51,8 +56,10 @@
         .the-text { font-size: 38px; font-weight: 900; letter-spacing: 22px; color: #836fff; margin-bottom: -15px; margin-left: 22px; opacity: 0.9; }
         h1 { font-size: clamp(60px, 12vw, 150px); letter-spacing: 45px; font-weight: 900; margin-right: -45px; text-shadow: 0 0 40px rgba(131,111,255,0.5); margin-bottom: 40px; }
         .main-dl { background: #836fff; color: #000; padding: 18px 60px; text-decoration: none; font-weight: 900; font-size: 16px; letter-spacing: 4px; transition: 0.3s; border-radius: 2px; }
+        .main-dl:hover { background: #fff; transform: scale(1.05); box-shadow: 0 0 30px #836fff; }
 
-        .gameplay-container { width: 100%; max-width: 900px; margin: 0 auto; border: 2px solid #1a1a1a; position: relative; cursor: pointer; background: #000; }
+        .gameplay-container { width: 100%; max-width: 900px; margin: 0 auto; border: 2px solid #1a1a1a; position: relative; cursor: pointer; background: #000; transition: 0.4s; }
+        .gameplay-container:hover { border-color: #836fff; }
         video { width: 100%; display: block; opacity: 0.4; transition: 0.5s; pointer-events: none; }
         .gameplay-container:hover video { opacity: 1; }
         .vid-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; font-weight: 900; letter-spacing: 5px; opacity: 0.8; }
@@ -62,20 +69,24 @@
 
         .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .feat-card { background: #080808; border: 1px solid #151515; padding: 40px; transition: 0.3s; }
-        .feat-card:hover { border-color: #836fff; transform: translateY(-5px); }
+        .feat-card:hover { border-color: #836fff; background: #0c0c0c; transform: translateY(-5px); }
+        .feat-card h3 { color: #836fff; font-weight: 900; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+        .feat-card p { color: #888; font-weight: 700; line-height: 1.5; }
 
         .map-slider { position: relative; width: 100%; max-width: 850px; margin: 0 auto; border: 1px solid #222; overflow: hidden; background: #000; }
         .slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1); }
-        .slide { min-width: 100%; aspect-ratio: 16/9; position: relative; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); }
-        .map-tag { position: absolute; bottom: 20px; left: 20px; background: #836fff; color: #000; padding: 8px 15px; font-weight: 900; font-size: 12px; }
+        .slide { min-width: 100%; position: relative; aspect-ratio: 16/9; overflow: hidden; cursor: zoom-in; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; filter: brightness(0.75) contrast(1.4); }
+        .slide:hover img { transform: scale(1.1); } 
 
+        .map-tag { position: absolute; bottom: 20px; left: 20px; background: #836fff; color: #000; padding: 8px 15px; font-weight: 900; font-size: 12px; letter-spacing: 2px; z-index: 10; }
         .arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); border: 1px solid #836fff; color: #fff; width: 45px; height: 80px; cursor: pointer; z-index: 20; display: flex; align-items: center; justify-content: center; }
         .next { right: 0; } .prev { left: 0; }
 
         .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .news-box { position: relative; height: 250px; border: 1px solid #222; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
         .news-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: brightness(0.25); z-index: 1; transition: 0.5s; }
+        .news-box:hover .news-bg { filter: brightness(0.45); transform: scale(1.08); } 
         .news-content { position: relative; z-index: 2; }
 
         footer { padding: 60px 0; text-align: center; font-size: 10px; opacity: 0.3; letter-spacing: 5px; font-weight: 900; }
@@ -88,14 +99,14 @@
         <div class="nav-links">
             <a href="#home">Home</a><a href="#gameplay">Gameplay</a><a href="#story">Story</a><a href="#features">Features</a><a href="#gallery">Archives</a>
         </div>
-        <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&dl=1" class="top-dl">DOWNLOAD NOW</a>
+        <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&st=tk5pvfje&dl=1" class="top-dl">DOWNLOAD NOW</a>
     </nav>
 
     <div class="container">
         <section id="home">
             <div class="the-text">THE</div>
             <h1>MISERY</h1>
-            <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&dl=1" class="main-dl">DOWNLOAD NOW</a>
+            <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&st=tk5pvfje&dl=1" class="main-dl">DOWNLOAD NOW</a>
         </section>
 
         <section id="gameplay">
@@ -111,16 +122,19 @@
         <section id="story">
             <div class="label">Declassified Story</div>
             <div class="story-content">
-                <p>Five years have passed since the infamous G4 Cyborg Incident plagued <strong>MISERY Corporation</strong>.</p>
-                <p>You awake inside a mysterious mansion... Who are you? How did you end up here?</p>
+                <p>Five years have passed since the infamous G4 Cyborg Incident plagued <strong>MISERY Corporation</strong>. With the corporation now being bankrupted, the once busy G4 district is slowly decaying.</p>
+                <p>You awake inside a mysterious mansion with only a <strong>MISERY</strong> employee card in your pocket. Who are you? How did you end up here? And what does <strong>MISERY Corporation</strong> have to do with any of it?</p>
+                <p>Investigate <strong>MISERY Corporation</strong> and dig up dark truths that were probably better left forgotten. Solve puzzles, explore, and survive as you learn about the dark secrets held inside the decommissioned facility.</p>
             </div>
         </section>
 
         <section id="features">
             <div class="label">Core Systems</div>
             <div class="features-grid">
-                <div class="feat-card"><h3>Point & Click</h3><p>Environmental interaction.</p></div>
-                <div class="feat-card"><h3>Puzzle Solving</h3><p>Logic-based puzzles.</p></div>
+                <div class="feat-card"><h3>Point & Click</h3><p>Immersive adventure portions focused on environmental interaction.</p></div>
+                <div class="feat-card"><h3>Puzzle Solving</h3><p>Hardcore logic-based puzzles integrated into the G4 machinery.</p></div>
+                <div class="feat-card"><h3>Dialogue Decisions</h3><p>Branching conversations that impact your relationship with survivors.</p></div>
+                <div class="feat-card"><h3>Good-Looking Characters</h3><p>High-fidelity character designs with unique shaders.</p></div>
             </div>
         </section>
 
@@ -129,8 +143,18 @@
             <div class="map-slider">
                 <div class="arrow prev" onclick="moveSlide(-1)">&#10094;</div>
                 <div class="slider-track" id="track">
-                    <div class="slide"><img src="public/qqq1.png"><div class="map-tag">Sector 01</div></div>
+                    <div class="slide"><img src="public/qqq1.png"><div class="map-tag">Sector 01 // Entry</div></div>
                     <div class="slide"><img src="public/qqq2.png"><div class="map-tag">Sector 02</div></div>
+                    <div class="slide"><img src="public/qqq3.png"><div class="map-tag">Sector 03</div></div>
+                    <div class="slide"><img src="public/qqq4.png"><div class="map-tag">Sector 04 // Void</div></div>
+                    <div class="slide"><img src="public/qqq5.png"><div class="map-tag">Sector 05 // Labs</div></div>
+                    <div class="slide"><img src="public/qqq6.png"><div class="map-tag">Sector 06 // Hallway</div></div>
+                    <div class="slide"><img src="public/qqq7.png"><div class="map-tag">Sector 07</div></div>
+                    <div class="slide"><img src="public/qqq8.png"><div class="map-tag">Sector 08 // Core</div></div>
+                    <div class="slide"><img src="public/qqq9.png"><div class="map-tag">Sector 09</div></div>
+                    <div class="slide"><img src="public/qqq10.png"><div class="map-tag">Sector 10 // Deck</div></div>
+                    <div class="slide"><img src="public/qqq11.png"><div class="map-tag">Sector 11 // Processing</div></div>
+                    <div class="slide"><img src="public/qqq12.png"><div class="map-tag">Sector 12</div></div>
                 </div>
                 <div class="arrow next" onclick="moveSlide(1)">&#10095;</div>
             </div>
@@ -141,7 +165,19 @@
             <div class="news-grid">
                 <div class="news-box">
                     <div class="news-bg" style="background-image: url('public/qqq13.png');"></div>
-                    <div class="news-content"><h3>SYSTEM STABILIZATION</h3></div>
+                    <div class="news-content">
+                        <div style="color:#836fff; font-weight:900; font-size:12px; margin-bottom:10px;">JANUARY 2026</div>
+                        <h3>SYSTEM STABILIZATION</h3>
+                        <p>Decryption protocols updated. Mansion sectors contained.</p>
+                    </div>
+                </div>
+                <div class="news-box">
+                    <div class="news-bg" style="background-image: url('public/qqq14.png');"></div>
+                    <div class="news-content">
+                        <div style="color:#836fff; font-weight:900; font-size:12px; margin-bottom:10px;">FEBRUARY 2026</div>
+                        <h3>ATMOSPHERIC RENDERING</h3>
+                        <p>Volumetric fog and shadow mapping enhancement.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -150,10 +186,16 @@
     </div>
 
     <script>
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) return false;
+            if(e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) return false;
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+        }
+
         let currentSlide = 0;
         const track = document.getElementById('track');
+        const slides = document.querySelectorAll('.slide');
         function moveSlide(step) {
-            const slides = document.querySelectorAll('.slide');
             currentSlide = (currentSlide + step + slides.length) % slides.length;
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
@@ -161,8 +203,12 @@
         const vidBox = document.getElementById('vidBox');
         const gameVid = document.getElementById('gameVid');
         if(vidBox && gameVid) {
+            gameVid.currentTime = 8;
             vidBox.addEventListener('mouseenter', () => { gameVid.play(); });
             vidBox.addEventListener('mouseleave', () => { gameVid.pause(); });
+            gameVid.addEventListener('timeupdate', () => {
+                if (gameVid.currentTime >= 30) { gameVid.currentTime = 8; }
+            });
         }
     </script>
 </body>
