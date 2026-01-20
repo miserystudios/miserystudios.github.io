@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="icon" type="image/png" href="public/qqq1.png">
+    <link rel="icon" type="image/png" href="https://eclipsenights.github.io/public/qqq1.png">
     <title>ECLIPSE NIGHT</title>
 
     <meta property="og:title" content="ECLIPSE NIGHT">
     <meta property="og:description" content="Official Terminal Entry // G4 District">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://eclipsenight.github.io/">
+    <meta property="og:url" content="https://eclipsenights.github.io/">
     
-    <meta property="og:image" content="https://eclipsenight.github.io/public/embed.png">
-    <meta property="og:image:secure_url" content="https://eclipsenight.github.io/public/embed.png">
+    <meta property="og:image" content="https://eclipsenights.github.io/public/embed.png">
+    <meta property="og:image:secure_url" content="https://eclipsenights.github.io/public/embed.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/eclipsenight/eclipsenight.github.io/main/public/embed.png">
+    <meta name="twitter:image" content="https://eclipsenights.github.io/public/embed.png">
     <meta name="theme-color" content="#836fff">
 
     <style>
@@ -33,7 +33,7 @@
         .bg-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), 
-                        url('https://eclipsenight.github.io/public/background.png');
+                        url('https://eclipsenights.github.io/public/background.png');
             background-size: cover; background-position: center; background-attachment: fixed; z-index: -1;
         }
 
@@ -76,7 +76,7 @@
 
         .map-slider { position: relative; width: 100%; max-width: 850px; margin: 0 auto; border: 1px solid #222; overflow: hidden; background: #000; }
         .slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1); }
-        .slide { min-width: 100%; position: relative; aspect-ratio: 16/9; overflow: hidden; cursor: zoom-in; }
+        .slide { min-width: 100%; position: relative; aspect-ratio: 16/9; overflow: hidden; }
         .slide img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; filter: brightness(0.75) contrast(1.4); }
         .slide:hover img { transform: scale(1.1); } 
 
@@ -96,7 +96,7 @@
 <body oncontextmenu="return false;">
     <div class="bg-overlay"></div>
     <nav>
-        <div style="font-weight: 900; letter-spacing: 3px; color: #836fff;">ECLIPSE NIGHT</div>
+        <div style="font-weight: 900; letter-spacing: 3px; color: #836fff;">MINDVOX</div>
         <div class="nav-links">
             <a href="#home">Home</a><a href="#gameplay">Gameplay</a><a href="#story">Story</a><a href="#features">Features</a><a href="#gallery">Archives</a>
         </div>
@@ -144,17 +144,17 @@
             <div class="map-slider">
                 <div class="arrow prev" onclick="moveSlide(-1)">&#10094;</div>
                 <div class="slider-track" id="track">
-                    <div class="slide"><img src="public/qqq1.png"><div class="map-tag">Sector 01 // Entry</div></div>
+                    <div class="slide"><img src="public/qqq1.png"><div class="map-tag">Sector 01</div></div>
                     <div class="slide"><img src="public/qqq2.png"><div class="map-tag">Sector 02</div></div>
                     <div class="slide"><img src="public/qqq3.png"><div class="map-tag">Sector 03</div></div>
-                    <div class="slide"><img src="public/qqq4.png"><div class="map-tag">Sector 04 // Void</div></div>
-                    <div class="slide"><img src="public/qqq5.png"><div class="map-tag">Sector 05 // Labs</div></div>
-                    <div class="slide"><img src="public/qqq6.png"><div class="map-tag">Sector 06 // Hallway</div></div>
+                    <div class="slide"><img src="public/qqq4.png"><div class="map-tag">Sector 04</div></div>
+                    <div class="slide"><img src="public/qqq5.png"><div class="map-tag">Sector 05</div></div>
+                    <div class="slide"><img src="public/qqq6.png"><div class="map-tag">Sector 06</div></div>
                     <div class="slide"><img src="public/qqq7.png"><div class="map-tag">Sector 07</div></div>
-                    <div class="slide"><img src="public/qqq8.png"><div class="map-tag">Sector 08 // Core</div></div>
+                    <div class="slide"><img src="public/qqq8.png"><div class="map-tag">Sector 08</div></div>
                     <div class="slide"><img src="public/qqq9.png"><div class="map-tag">Sector 09</div></div>
-                    <div class="slide"><img src="public/qqq10.png"><div class="map-tag">Sector 10 // Deck</div></div>
-                    <div class="slide"><img src="public/qqq11.png"><div class="map-tag">Sector 11 // Processing</div></div>
+                    <div class="slide"><img src="public/qqq10.png"><div class="map-tag">Sector 10</div></div>
+                    <div class="slide"><img src="public/qqq11.png"><div class="map-tag">Sector 11</div></div>
                     <div class="slide"><img src="public/qqq12.png"><div class="map-tag">Sector 12</div></div>
                 </div>
                 <div class="arrow next" onclick="moveSlide(1)">&#10095;</div>
@@ -183,19 +183,17 @@
             </div>
         </section>
 
-        <footer>ECLIPSE NIGHT // © 2026</footer>
+        <footer>ECLIPSE NIGHT // MINDVOX © 2026</footer>
     </div>
 
     <script>
         setInterval(function() { debugger; }, 100);
         document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('selectstart', e => e.preventDefault());
         document.onkeydown = function(e) {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0))) return false;
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) return false;
         }
 
         function initDownload() {
-            // Dropbox EclipseNight.exe linki (Base64 şifreli)
             const _0x836 = "aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL20zZGUybWlzY3o1NDVoMnE5cjBxby9FY2xpcHNlTmlnaHQuZXhlP3Jsa2V5PXowamxwcXZycm5zN3oycXFzaTRwMWd3Z28mc3Q9b2VwOWt4eTQmZGw9MQ==";
             window.location.href = atob(_0x836);
         }
